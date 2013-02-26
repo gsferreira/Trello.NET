@@ -33,21 +33,7 @@ namespace TrelloNet.Internal
 				BaseUrl, _applicationKey, applicationName, scope.ToScopeString(), expiration.ToExpirationString()));
 		}
 
-        public void Request(IRestRequest request)
-        {
-            var response = Execute(request);
 
-            ThrowIfRequestWasUnsuccessful(request, response);
-        }
-
-        public T Request<T>(IRestRequest request) where T : class, new()
-        {
-            var response = Execute<T>(request);
-
-            ThrowIfRequestWasUnsuccessful(request, response);
-
-            return response.StatusCode == HttpStatusCode.NotFound ? null : response.Data;
-        }
 
 		public Task RequestAsync(IRestRequest request)
 		{
@@ -73,7 +59,7 @@ namespace TrelloNet.Internal
 		{
 			var tcs = new TaskCompletionSource<T>();
 
-			ExecuteAsync<T>(request, (response, handle) =>
+			var r = ExecuteAsync<T>(request, (response, handle) =>
 			{
 				try
 				{

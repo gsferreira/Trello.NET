@@ -1,0 +1,831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FCA920C8-B25B-4C39-8071-2357419BFB33}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrelloNet.WindowsPhone</RootNamespace>
+    <AssemblyName>TrelloNet.WindowsPhone</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\sl4-windowsphone71\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.WindowsPhone">
+      <HintPath>..\packages\RestSharp.104.1\lib\sl4-wp71\RestSharp.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Servicemodel.Web" />
+    <Reference Include="System.Threading.Tasks.WP71">
+      <HintPath>..\packages\System.Threading.Tasks.3.0.1\lib\sl4-wp71\System.Threading.Tasks.WP71.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\TrelloNet\Actions\Action.cs">
+      <Link>Actions\Action.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\ActionType.cs">
+      <Link>Actions\ActionType.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\AddAttachmentToCardAction.cs">
+      <Link>Actions\AddAttachmentToCardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\AddChecklistToCardAction.cs">
+      <Link>Actions\AddChecklistToCardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\AddMemberToBoardAction.cs">
+      <Link>Actions\AddMemberToBoardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\AddMemberToCardAction.cs">
+      <Link>Actions\AddMemberToCardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\AddToOrganizationBoardAction.cs">
+      <Link>Actions\AddToOrganizationBoardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\CommentCardAction.cs">
+      <Link>Actions\CommentCardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\ConvertToCardFromCheckItemAction.cs">
+      <Link>Actions\ConvertToCardFromCheckItemAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\CreateBoardAction.cs">
+      <Link>Actions\CreateBoardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\CreateCardAction.cs">
+      <Link>Actions\CreateCardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\CreateListAction.cs">
+      <Link>Actions\CreateListAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\CreateOrganizationAction.cs">
+      <Link>Actions\CreateOrganizationAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\DeleteAttachmentFromCardAction.cs">
+      <Link>Actions\DeleteAttachmentFromCardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\IActionId.cs">
+      <Link>Actions\IActionId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\IActions.cs">
+      <Link>Actions\IActions.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\IAsyncActions.cs">
+      <Link>Actions\IAsyncActions.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Internal\ActionConverter.cs">
+      <Link>Actions\Internal\ActionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Internal\ActionsChangeTextRequest.cs">
+      <Link>Actions\Internal\ActionsChangeTextRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Internal\ActionsDeleteRequest.cs">
+      <Link>Actions\Internal\ActionsDeleteRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Internal\ActionsForBoardRequest.cs">
+      <Link>Actions\Internal\ActionsForBoardRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Internal\ActionsForCardRequest.cs">
+      <Link>Actions\Internal\ActionsForCardRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Internal\ActionsForListRequest.cs">
+      <Link>Actions\Internal\ActionsForListRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Internal\ActionsForMemberRequest.cs">
+      <Link>Actions\Internal\ActionsForMemberRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Internal\ActionsForOrganizationRequest.cs">
+      <Link>Actions\Internal\ActionsForOrganizationRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Internal\ActionsRequest.cs">
+      <Link>Actions\Internal\ActionsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Internal\AsyncActions.cs">
+      <Link>Actions\Internal\AsyncActions.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Internal\SinceDate.cs">
+      <Link>Actions\Internal\SinceDate.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Internal\SinceLastView.cs">
+      <Link>Actions\Internal\SinceLastView.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\ISince.cs">
+      <Link>Actions\ISince.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\IUpdateData.cs">
+      <Link>Actions\IUpdateData.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\MoveCardFromBoardAction.cs">
+      <Link>Actions\MoveCardFromBoardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\MoveCardToBoardAction.cs">
+      <Link>Actions\MoveCardToBoardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Old.cs">
+      <Link>Actions\Old.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\RemoveChecklistFromCardAction.cs">
+      <Link>Actions\RemoveChecklistFromCardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\RemoveFromOrganizationBoardAction.cs">
+      <Link>Actions\RemoveFromOrganizationBoardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\RemoveMemberFromBoardAction.cs">
+      <Link>Actions\RemoveMemberFromBoardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\RemoveMemberFromCardAction.cs">
+      <Link>Actions\RemoveMemberFromCardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\Since.cs">
+      <Link>Actions\Since.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\UpdateBoardAction.cs">
+      <Link>Actions\UpdateBoardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\UpdateCardAction.cs">
+      <Link>Actions\UpdateCardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\UpdateCardMoveAction.cs">
+      <Link>Actions\UpdateCardMoveAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\UpdateCheckItemStateOnCardAction.cs">
+      <Link>Actions\UpdateCheckItemStateOnCardAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Actions\UpdateListAction.cs">
+      <Link>Actions\UpdateListAction.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\AttachmentLink.cs">
+      <Link>AttachmentLink.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\AttachmentName.cs">
+      <Link>AttachmentName.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\BoardName.cs">
+      <Link>BoardName.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Board.cs">
+      <Link>Boards\Board.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\BoardFilter.cs">
+      <Link>Boards\BoardFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\BoardId.cs">
+      <Link>Boards\BoardId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\BoardMemberType.cs">
+      <Link>Boards\BoardMemberType.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\BoardPreferences.cs">
+      <Link>Boards\BoardPreferences.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\CommentPermission.cs">
+      <Link>Boards\CommentPermission.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\IAsyncBoards.cs">
+      <Link>Boards\IAsyncBoards.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\IBoardId.cs">
+      <Link>Boards\IBoardId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\IBoards.cs">
+      <Link>Boards\IBoards.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\AsyncBoards.cs">
+      <Link>Boards\Internal\AsyncBoards.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsAddMemberRequest.cs">
+      <Link>Boards\Internal\BoardsAddMemberRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsAddRequest.cs">
+      <Link>Boards\Internal\BoardsAddRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsChangeDescriptionRequest.cs">
+      <Link>Boards\Internal\BoardsChangeDescriptionRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsChangeLabelNameRequest.cs">
+      <Link>Boards\Internal\BoardsChangeLabelNameRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsChangeNameRequest.cs">
+      <Link>Boards\Internal\BoardsChangeNameRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsChangePermissionLevelRequest.cs">
+      <Link>Boards\Internal\BoardsChangePermissionLevelRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsCloseRequest.cs">
+      <Link>Boards\Internal\BoardsCloseRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsForCardRequest.cs">
+      <Link>Boards\Internal\BoardsForCardRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsForChecklistRequest.cs">
+      <Link>Boards\Internal\BoardsForChecklistRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsForListRequest.cs">
+      <Link>Boards\Internal\BoardsForListRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsForMemberRequest.cs">
+      <Link>Boards\Internal\BoardsForMemberRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsForOrganizationRequest.cs">
+      <Link>Boards\Internal\BoardsForOrganizationRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsMarkAsViewedRequest.cs">
+      <Link>Boards\Internal\BoardsMarkAsViewedRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsRemoveMemberRequest.cs">
+      <Link>Boards\Internal\BoardsRemoveMemberRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsReOpenRequest.cs">
+      <Link>Boards\Internal\BoardsReOpenRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsRequest.cs">
+      <Link>Boards\Internal\BoardsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsUpdateRequest.cs">
+      <Link>Boards\Internal\BoardsUpdateRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\Internal\BoardsWithIdRequest.cs">
+      <Link>Boards\Internal\BoardsWithIdRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\InvitationPermission.cs">
+      <Link>Boards\InvitationPermission.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\IUpdatableBoard.cs">
+      <Link>Boards\IUpdatableBoard.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\NewBoard.cs">
+      <Link>Boards\NewBoard.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\PermissionLevel.cs">
+      <Link>Boards\PermissionLevel.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Boards\VotingPermission.cs">
+      <Link>Boards\VotingPermission.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\CardName.cs">
+      <Link>CardName.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\BoardCardFilter.cs">
+      <Link>Cards\BoardCardFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\BytesAttachment.cs">
+      <Link>Cards\BytesAttachment.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Card.cs">
+      <Link>Cards\Card.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\CardFilter.cs">
+      <Link>Cards\CardFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\CardId.cs">
+      <Link>Cards\CardId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Color.cs">
+      <Link>Cards\Color.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\FileAttachment.cs">
+      <Link>Cards\FileAttachment.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\IAsyncCards.cs">
+      <Link>Cards\IAsyncCards.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\IAttachmentId.cs">
+      <Link>Cards\IAttachmentId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\ICardId.cs">
+      <Link>Cards\ICardId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\ICards.cs">
+      <Link>Cards\ICards.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\AsyncCards.cs">
+      <Link>Cards\Internal\AsyncCards.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardChangeCheckItemRequest.cs">
+      <Link>Cards\Internal\CardChangeCheckItemRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsAddBytesAttachmentRequest.cs">
+      <Link>Cards\Internal\CardsAddBytesAttachmentRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsAddChecklistRequest.cs">
+      <Link>Cards\Internal\CardsAddChecklistRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsAddCommentRequest.cs">
+      <Link>Cards\Internal\CardsAddCommentRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsAddFileAttachmentRequest.cs">
+      <Link>Cards\Internal\CardsAddFileAttachmentRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsAddLabelRequest.cs">
+      <Link>Cards\Internal\CardsAddLabelRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsAddMemberRequest.cs">
+      <Link>Cards\Internal\CardsAddMemberRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsAddRequest.cs">
+      <Link>Cards\Internal\CardsAddRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsAddUrlAttachmentRequest.cs">
+      <Link>Cards\Internal\CardsAddUrlAttachmentRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsArchiveRequest.cs">
+      <Link>Cards\Internal\CardsArchiveRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsChangeCheckItemNameRequest.cs">
+      <Link>Cards\Internal\CardsChangeCheckItemNameRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsChangeCheckItemStateRequest.cs">
+      <Link>Cards\Internal\CardsChangeCheckItemStateRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsChangeDescriptionRequest.cs">
+      <Link>Cards\Internal\CardsChangeDescriptionRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsChangeDueDateRequest.cs">
+      <Link>Cards\Internal\CardsChangeDueDateRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsChangeNameRequest.cs">
+      <Link>Cards\Internal\CardsChangeNameRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsChangePosRequest.cs">
+      <Link>Cards\Internal\CardsChangePosRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsDeleteRequest.cs">
+      <Link>Cards\Internal\CardsDeleteRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsForBoardRequest.cs">
+      <Link>Cards\Internal\CardsForBoardRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsForChecklistRequest.cs">
+      <Link>Cards\Internal\CardsForChecklistRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsForListRequest.cs">
+      <Link>Cards\Internal\CardsForListRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsForMemberRequest.cs">
+      <Link>Cards\Internal\CardsForMemberRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsMoveRequest.cs">
+      <Link>Cards\Internal\CardsMoveRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsMoveToBoardRequest.cs">
+      <Link>Cards\Internal\CardsMoveToBoardRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsRemoveAttachmentRequest.cs">
+      <Link>Cards\Internal\CardsRemoveAttachmentRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsRemoveChecklistRequest.cs">
+      <Link>Cards\Internal\CardsRemoveChecklistRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsRemoveLabelRequest.cs">
+      <Link>Cards\Internal\CardsRemoveLabelRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsRemoveMemberRequest.cs">
+      <Link>Cards\Internal\CardsRemoveMemberRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsRequest.cs">
+      <Link>Cards\Internal\CardsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsUnarchiveRequest.cs">
+      <Link>Cards\Internal\CardsUnarchiveRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsUpdateRequest.cs">
+      <Link>Cards\Internal\CardsUpdateRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\Internal\CardsWithShortIdRequest.cs">
+      <Link>Cards\Internal\CardsWithShortIdRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\IUpdatableCard.cs">
+      <Link>Cards\IUpdatableCard.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\NewCard.cs">
+      <Link>Cards\NewCard.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Cards\UrlAttachment.cs">
+      <Link>Cards\UrlAttachment.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\CheckItemName.cs">
+      <Link>CheckItemName.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\CheckItemWithState.cs">
+      <Link>CheckItemWithState.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\ChecklistName.cs">
+      <Link>ChecklistName.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\CheckItem.cs">
+      <Link>Checklists\CheckItem.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\Checklist.cs">
+      <Link>Checklists\Checklist.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\ChecklistId.cs">
+      <Link>Checklists\ChecklistId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\IAsyncChecklists.cs">
+      <Link>Checklists\IAsyncChecklists.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\ICheckItemId.cs">
+      <Link>Checklists\ICheckItemId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\IChecklistId.cs">
+      <Link>Checklists\IChecklistId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\IChecklists.cs">
+      <Link>Checklists\IChecklists.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\Internal\AsyncChecklists.cs">
+      <Link>Checklists\Internal\AsyncChecklists.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\Internal\ChecklistsAddCheckItemRequest.cs">
+      <Link>Checklists\Internal\ChecklistsAddCheckItemRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\Internal\ChecklistsAddRequest.cs">
+      <Link>Checklists\Internal\ChecklistsAddRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\Internal\ChecklistsChangeNameRequest.cs">
+      <Link>Checklists\Internal\ChecklistsChangeNameRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\Internal\ChecklistsForBoardRequest.cs">
+      <Link>Checklists\Internal\ChecklistsForBoardRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\Internal\ChecklistsForCardRequest.cs">
+      <Link>Checklists\Internal\ChecklistsForCardRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\Internal\ChecklistsRemoveCheckItemRequest.cs">
+      <Link>Checklists\Internal\ChecklistsRemoveCheckItemRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\Internal\ChecklistsRequest.cs">
+      <Link>Checklists\Internal\ChecklistsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\Internal\ChecklistsUpdateRequest.cs">
+      <Link>Checklists\Internal\ChecklistsUpdateRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Checklists\IUpdatableChecklist.cs">
+      <Link>Checklists\IUpdatableChecklist.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Expiration.cs">
+      <Link>Expiration.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Extensions\AutoPaging\AutoPaged.cs">
+      <Link>Extensions\AutoPaging\AutoPaged.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Extensions\AutoPaging\AutoPagedActions.cs">
+      <Link>Extensions\AutoPaging\AutoPagedActions.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Extensions\AutoPaging\AutoPagedNotifications.cs">
+      <Link>Extensions\AutoPaging\AutoPagedNotifications.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Extensions\AutoPaging\AutoPagingExtensions.cs">
+      <Link>Extensions\AutoPaging\AutoPagingExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\IAsyncTrello.cs">
+      <Link>IAsyncTrello.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Internal\AsyncTrello.cs">
+      <Link>Internal\AsyncTrello.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Internal\BooleanExtensions.cs">
+      <Link>Internal\BooleanExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Internal\EnumExtentions.cs">
+      <Link>Internal\EnumExtentions.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Internal\ExpirationExtentions.cs">
+      <Link>Internal\ExpirationExtentions.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Internal\Guard.cs">
+      <Link>Internal\Guard.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Internal\JsonCreationConverter.cs">
+      <Link>Internal\JsonCreationConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Internal\MemberTokenAuthenticator.cs">
+      <Link>Internal\MemberTokenAuthenticator.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Internal\ReadFilter.cs">
+      <Link>Internal\ReadFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Internal\RestRequestExtensions.cs">
+      <Link>Internal\RestRequestExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Internal\ScopeExtensions.cs">
+      <Link>Internal\ScopeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Internal\TrelloDeserializer.cs">
+      <Link>Internal\TrelloDeserializer.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Internal\TrelloEnumConverter.cs">
+      <Link>Internal\TrelloEnumConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\ITrello.cs">
+      <Link>ITrello.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\ListName.cs">
+      <Link>ListName.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\IAsyncLists.cs">
+      <Link>Lists\IAsyncLists.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\IListId.cs">
+      <Link>Lists\IListId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\ILists.cs">
+      <Link>Lists\ILists.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\Internal\AsyncLists.cs">
+      <Link>Lists\Internal\AsyncLists.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\Internal\ListsAddRequest.cs">
+      <Link>Lists\Internal\ListsAddRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\Internal\ListsArchiveRequest.cs">
+      <Link>Lists\Internal\ListsArchiveRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\Internal\ListsChangeNameRequest.cs">
+      <Link>Lists\Internal\ListsChangeNameRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\Internal\ListsChangePosRequest.cs">
+      <Link>Lists\Internal\ListsChangePosRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\Internal\ListsForBoardRequest.cs">
+      <Link>Lists\Internal\ListsForBoardRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\Internal\ListsForCardRequest.cs">
+      <Link>Lists\Internal\ListsForCardRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\Internal\ListsRequest.cs">
+      <Link>Lists\Internal\ListsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\Internal\ListsUnarchiveRequest.cs">
+      <Link>Lists\Internal\ListsUnarchiveRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\Internal\ListsUpdateRequest.cs">
+      <Link>Lists\Internal\ListsUpdateRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\IUpdatableList.cs">
+      <Link>Lists\IUpdatableList.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\List.cs">
+      <Link>Lists\List.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\ListFilter.cs">
+      <Link>Lists\ListFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\ListId.cs">
+      <Link>Lists\ListId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Lists\NewList.cs">
+      <Link>Lists\NewList.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\IAsyncMembers.cs">
+      <Link>Members\IAsyncMembers.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\IMemberId.cs">
+      <Link>Members\IMemberId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\IMembers.cs">
+      <Link>Members\IMembers.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\Internal\AsyncMembers.cs">
+      <Link>Members\Internal\AsyncMembers.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\Internal\MembersForBoardRequest.cs">
+      <Link>Members\Internal\MembersForBoardRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\Internal\MembersForCardRequest.cs">
+      <Link>Members\Internal\MembersForCardRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\Internal\MembersForOrganizationRequest.cs">
+      <Link>Members\Internal\MembersForOrganizationRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\Internal\MembersForTokenRequest.cs">
+      <Link>Members\Internal\MembersForTokenRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\Internal\MembersInvitedForBoardRequest.cs">
+      <Link>Members\Internal\MembersInvitedForBoardRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\Internal\MembersRequest.cs">
+      <Link>Members\Internal\MembersRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\Me.cs">
+      <Link>Members\Me.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\Member.cs">
+      <Link>Members\Member.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\MemberFilter.cs">
+      <Link>Members\MemberFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\MemberId.cs">
+      <Link>Members\MemberId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Members\MemberStatus.cs">
+      <Link>Members\MemberStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\AddAdminToBoardNotification.cs">
+      <Link>Notifications\AddAdminToBoardNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\AddAdminToOrganization.cs">
+      <Link>Notifications\AddAdminToOrganization.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\AddedToBoardNotification.cs">
+      <Link>Notifications\AddedToBoardNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\AddedToCardNotification.cs">
+      <Link>Notifications\AddedToCardNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\ChangeCardNotification.cs">
+      <Link>Notifications\ChangeCardNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\CloseBoardNotification.cs">
+      <Link>Notifications\CloseBoardNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\CommentCardNotification.cs">
+      <Link>Notifications\CommentCardNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\IAsyncNotifications.cs">
+      <Link>Notifications\IAsyncNotifications.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\INotificationId.cs">
+      <Link>Notifications\INotificationId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\INotifications.cs">
+      <Link>Notifications\INotifications.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\Internal\AsyncNotifications.cs">
+      <Link>Notifications\Internal\AsyncNotifications.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\Internal\NotificationConverter.cs">
+      <Link>Notifications\Internal\NotificationConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\Internal\NotificationsForMeRequest.cs">
+      <Link>Notifications\Internal\NotificationsForMeRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\Internal\NotificationsRequest.cs">
+      <Link>Notifications\Internal\NotificationsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\InvitedToBoardNotification.cs">
+      <Link>Notifications\InvitedToBoardNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\InvitedToOrganizationNotification.cs">
+      <Link>Notifications\InvitedToOrganizationNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\MentionedOnCardNotification.cs">
+      <Link>Notifications\MentionedOnCardNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\Notification.cs">
+      <Link>Notifications\Notification.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\NotificationId.cs">
+      <Link>Notifications\NotificationId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\NotificationType.cs">
+      <Link>Notifications\NotificationType.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\OrganizationName.cs">
+      <Link>Notifications\OrganizationName.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\RemovedFromBoardNotification.cs">
+      <Link>Notifications\RemovedFromBoardNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\RemovedFromCardNotification.cs">
+      <Link>Notifications\RemovedFromCardNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Notifications\RemovedFromOrganizationNotification.cs">
+      <Link>Notifications\RemovedFromOrganizationNotification.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Organizations\IAsyncOrganizations.cs">
+      <Link>Organizations\IAsyncOrganizations.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Organizations\Internal\AsyncOrganizations.cs">
+      <Link>Organizations\Internal\AsyncOrganizations.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Organizations\Internal\OrganizationsForBoardRequest.cs">
+      <Link>Organizations\Internal\OrganizationsForBoardRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Organizations\Internal\OrganizationsForMemberRequest.cs">
+      <Link>Organizations\Internal\OrganizationsForMemberRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Organizations\Internal\OrganizationsRequest.cs">
+      <Link>Organizations\Internal\OrganizationsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Organizations\Internal\OrganizationsWithIdRequest.cs">
+      <Link>Organizations\Internal\OrganizationsWithIdRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Organizations\IOrganizationId.cs">
+      <Link>Organizations\IOrganizationId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Organizations\IOrganizations.cs">
+      <Link>Organizations\IOrganizations.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Organizations\Organization.cs">
+      <Link>Organizations\Organization.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Organizations\OrganizationFilter.cs">
+      <Link>Organizations\OrganizationFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Organizations\OrganizationId.cs">
+      <Link>Organizations\OrganizationId.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Paging.cs">
+      <Link>Paging.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Position.cs">
+      <Link>Position.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Scope.cs">
+      <Link>Scope.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Search\Internal\SearchRequest.cs">
+      <Link>Search\Internal\SearchRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Search\ModelType.cs">
+      <Link>Search\ModelType.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Search\SearchFilter.cs">
+      <Link>Search\SearchFilter.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Search\SearchResults.cs">
+      <Link>Search\SearchResults.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Tokens\IAsyncTokens.cs">
+      <Link>Tokens\IAsyncTokens.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Tokens\Internal\AsyncTokens.cs">
+      <Link>Tokens\Internal\AsyncTokens.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Tokens\Internal\TokensRequest.cs">
+      <Link>Tokens\Internal\TokensRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Tokens\ITokens.cs">
+      <Link>Tokens\ITokens.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\Tokens\Token.cs">
+      <Link>Tokens\Token.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\TrelloException.cs">
+      <Link>TrelloException.cs</Link>
+    </Compile>
+    <Compile Include="..\TrelloNet\TrelloUnauthorizedException.cs">
+      <Link>TrelloUnauthorizedException.cs</Link>
+    </Compile>
+    <Compile Include="Actions\Internal\Actions.cs" />
+    <Compile Include="Internal\TrelloRestClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trello.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

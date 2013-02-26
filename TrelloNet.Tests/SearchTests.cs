@@ -53,13 +53,13 @@ namespace TrelloNet.Tests
                 Pinned = true,
                 Url = "https://trello.com/board/welcome-board/" + Constants.WelcomeBoardId,
                 Id = Constants.WelcomeBoardId,
-                Prefs = new BoardPreferences
-                {
-                    Comments = CommentPermission.Members,
-                    Invitations = InvitationPermission.Members,
-                    PermissionLevel = PermissionLevel.Private,
-                    Voting = VotingPermission.Members
-                },
+                //Prefs = new BoardPreferences
+                //{
+                //    Comments = CommentPermission.Members,
+                //    Invitations = InvitationPermission.Members,
+                //    PermissionLevel = PermissionLevel.Private,
+                //    Voting = VotingPermission.Members
+                //},
                 LabelNames = new Dictionary<Color, string>
 				{
 					{ Color.Yellow, "" },
